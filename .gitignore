@@ -1,0 +1,11 @@
+/*.js
+!index.js
+
+## Modules
+node_modules
+yarn.lock
+
+## Misc
+.vscode
+.DS_STORE
+TODO.md

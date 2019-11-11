@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+yarn.lock
+
+# Package
+src
+.vscode
+.babelrc
+.editorconfig
+.eslintrc.js
+.prettierrc.js
+.release-it.js
+
+# Misc
+ROADMAP.md
+TODO.md
