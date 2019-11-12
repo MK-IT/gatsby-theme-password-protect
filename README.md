@@ -8,7 +8,7 @@
 
 ## Description
 
-Blocks the access to the whole app and prompts the user for a password to enter.
+Session-based password protection for Gatsby apps. Blocks the access to the whole app and prompts the user for a password to enter.
 
 - Protect all pages from access at an app-level
 - Configurable password
