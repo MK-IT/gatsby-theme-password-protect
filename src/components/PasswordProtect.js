@@ -2,7 +2,7 @@
  * Write-only the password as cookie
  */
 import React, { useState } from 'react';
-import { setSessionPassword } from './utils';
+import { setSessionPassword } from '../utils/utils';
 
 const styles = {
   wrapper: {

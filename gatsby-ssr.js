@@ -3,8 +3,8 @@
  * Read-only the password from cookies
  */
 import React from 'react';
-import { isAllowed } from './utils';
-import PasswordProtect from './PasswordProtect';
+import { isAllowed } from './src/utils/utils';
+import PasswordProtect from './src/components/PasswordProtect';
 
 export const wrapRootElement = (_, themeOptions) => {
   if (isAllowed(themeOptions.password)) {
