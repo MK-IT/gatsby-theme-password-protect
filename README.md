@@ -31,9 +31,9 @@ yarn add mkit@gatsby-theme-password-protect
 
 ### Theme options
 
-| Key      | Default value    | Description                                                                      |
-| -------- | ---------------- | -------------------------------------------------------------------------------- |
-| password | random generated | If not present will generate random one and print it into Node's console output. |
+| Key        | Default value | Description                                                                                                                                 |
+| ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `password` | `undefined`   | The secret phrase (string) required from users to sign in. `undefined` would be the same as no-protection and skip the prompting component. |
 
 ### Theme shadowing
 
