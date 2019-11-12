@@ -12,6 +12,7 @@ Session-based password protection for Gatsby apps. Blocks the access to the whol
 
 - Protect all pages from access at an app-level
 - Configurable password
+- Replaceable UI through [Shadowing](https://www.gatsbyjs.org/docs/themes/shadowing)
 - Easy to use
 
 ## Install
@@ -33,6 +34,26 @@ yarn add mkit@gatsby-theme-password-protect
 | Key      | Default value    | Description                                                                      |
 | -------- | ---------------- | -------------------------------------------------------------------------------- |
 | password | random generated | If not present will generate random one and print it into Node's console output. |
+
+### Theme shadowing
+
+There are two shadowing options.
+a) `PasswordProtect.js` is the UI prompt displayed to users. From within we must set the new password candidate.
+b) `utils.js` is utility module exporting `setSessionPassword(passwordCandidate)` and `isAllowed(themeOpts.password)`.
+
+#### Password protection component
+
+_Path to be shadowed: `@mkitio/gatsby-theme-password-protect/components/PasswordProtect.js`._
+
+Override the existing page-like password prompt component.
+
+**Note:** From within this component you should call `setSessionPassword(passwordCandidate)`.
+
+#### Utility
+
+_Path to be shadowed: `@mkitio/gatsby-theme-password-protect/utils/utils.js`._
+
+Override the `setSessionPassword()` and `isAllowed()` functions.
 
 ### Example usage
 

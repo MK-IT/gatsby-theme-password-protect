@@ -4,7 +4,7 @@ The roadmap is a living document, and it is likely that priorities will change, 
 
 ## Must-have features
 
-- [ ] Convert to a theme to support shadowing of the prompt component (~page).
+- [x] Convert to a theme to support shadowing of the prompt component (~page).
 
 - [ ] Add theme option for page-level password protection with optional partial matching.
   ```js
