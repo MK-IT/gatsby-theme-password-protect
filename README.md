@@ -8,32 +8,11 @@
 
 ## Description
 
-TODO:
+Blocks the access to the whole app and prompts the user for a password to enter.
 
-<!-- A Gatsby blog theme supporting local filesystem content, MDX, image processing, and content mapping.
-
-The theme provides several built-in features to set the bare-minimum for building a blog including:
-
-- Content sourcing and transformation from the filesystem via [`gatsby-source-filesystem`](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/?=gatsby-source-file) and [`gatsby-transformer-yaml`](https://www.gatsbyjs.org/packages/gatsby-transformer-yaml/?=gatsby-transformer-yaml)
-- [MDX support](https://mdxjs.com/) via [`gatsby-plugin-mdx`](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/)
-- Image processing via [`gatsby-plugin-sharp`](https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/?=gatsby-plugin-sharp) and [`gatsby-remark-images`](https://www.gatsbyjs.org/packages/gatsby-remark-images/?=gatsby-remark-image)
-- Auto creation of individual blog post pages
-- Auto mapping of frontmatter fields to YAML configuration files
-- Auto slug field generation via [`createFilePath`](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/#createfilepath)
-- Auto [reading-time](https://www.npmjs.com/package/reading-time) field generation
-
-What you'll get:
-
-- Content sourced from the local filesystem, e.g. `content/` folder within your repository
-- Blog post pages created automatically given your `content/posts/` contents
-- Auto blog post slug field generation based on folder naming, e.g. `content/posts/mypost` results in `/mypost` slug
-- Reading time field based on the content length of the MDX file, e.g. `{ text: '1 min read', minutes: 1, time: 60000, words: 200 }`
-- MDX support out of the box
-- Optimized images out of the box
-- Ability to define relations between `frontmatter` fields and your own mappings, e.g. multiple authors, tags, etc.
-- Blank canvas for you to built on top of, i.e. pages and components are for you to implement.
-
-Heavily inspired by [`gatsby-theme-blog`](https://www.gatsbyjs.org/packages/gatsby-theme-blog/) and [`gatsby-theme-blog-core`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-theme-blog-core). -->
+- Protect all pages from access at an app-level
+- Configurable password
+- Easy to use
 
 ## Install
 
@@ -69,9 +48,13 @@ module.exports = {
       }
     }
   ]
-}
+};
 ```
 
 ## How it works
 
-TODO:
+The plugin overrides `wrapRootElement()` for both [`gatsby-browser.js`](https://www.gatsbyjs.org/docs/browser-apis/#wrapRootElement) and [`gatsby-ssr.js`](https://www.gatsbyjs.org/docs/ssr-apis/#wrapRootElement).
+
+At the start of `wrapRootElement()` the plugin tries to load a cookie with name `gatsby-plugin-password-protect`.
+a) If it matches the predefined password in the plugin's config -> then allow the user to view the site
+b) Else -> render a custom component with password prompt
