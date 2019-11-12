@@ -6,4 +6,4 @@ export const setSessionPassword = passwordCandidate =>
   Cookies.set(COOKIE_NAME, passwordCandidate);
 
 export const isAllowed = correctPassword =>
-  Cookies.get(COOKIE_NAME) === correctPassword;
+  Cookies.get(COOKIE_NAME) === correctPassword || !correctPassword;
