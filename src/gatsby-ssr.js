@@ -6,8 +6,8 @@ import React from 'react';
 import { isAllowed } from './utils';
 import PasswordProtect from './PasswordProtect';
 
-export const wrapRootElement = (_, pluginOptions) => {
-  if (isAllowed(pluginOptions.password)) {
+export const wrapRootElement = (_, themeOptions) => {
+  if (isAllowed(themeOptions.password)) {
     return;
   }
 

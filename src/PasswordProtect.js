@@ -46,7 +46,7 @@ const styles = {
 const PasswordProtect = () => {
   const [password, setPassword] = useState('');
   const [isButtonHovered, buttonHover] = useState(false);
-  const [isPluginHovered, pluginHover] = useState(false);
+  const [isThemeHovered, themeHover] = useState(false);
   const [isSiteHovered, siteHover] = useState(false);
 
   const onSubmit = event => {
@@ -83,17 +83,17 @@ const PasswordProtect = () => {
       </form>
 
       <a
-        href="https://gitlab.com/mkit/open-source/gatsby-plugin-password-protect#readme"
+        href="https://gitlab.com/mkit/open-source/gatsby-theme-password-protect#readme"
         target="_blank"
         rel="noopener noreferrer"
         style={{
           ...styles.link,
-          ...(isPluginHovered ? styles.linkHover : null)
+          ...(isThemeHovered ? styles.linkHover : null)
         }}
-        onMouseEnter={() => pluginHover(true)}
-        onMouseLeave={() => pluginHover(false)}
+        onMouseEnter={() => themeHover(true)}
+        onMouseLeave={() => themeHover(false)}
       >
-        gatsby-plugin-password-protect
+        gatsby-theme-password-protect
       </a>
       <a
         href="https://mkit.io"

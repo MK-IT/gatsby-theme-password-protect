@@ -6,11 +6,11 @@ The roadmap is a living document, and it is likely that priorities will change, 
 
 - [ ] Convert to a theme to support shadowing of the prompt component (~page).
 
-- [ ] Add plugin option for page-level password protection with optional partial matching.
+- [ ] Add theme option for page-level password protection with optional partial matching.
   ```js
   // gatsby-config.js
   ..., {
-    resolve: 'gatsby-plugin-password-protect',
+    resolve: 'gatsby-theme-password-protect',
     options: {
       pagePaths: ['/protected-page', '/secret-page', 'example'],
       partialMatching: true
