@@ -1,7 +1,7 @@
 {
   "name": "@mkitio/gatsby-theme-password-protect",
   "version": "1.0.2",
-  "description": "A Gatsby theme to protect site-access with password by MK IT https://mkit.io",
+  "description": "A Gatsby theme for protecting apps and pages with password",
   "keywords": [
     "gatsby",
     "gatsby-theme",
