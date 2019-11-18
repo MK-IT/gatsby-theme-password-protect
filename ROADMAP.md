@@ -22,7 +22,9 @@ The roadmap is a living document, and it is likely that priorities will change, 
 
 ## Nice-to-have features
 
-- [ ] Use `react-helmet` to set robot-blocking head tag preventing crawling the site or page paths.
+- [ ] Implement more user-friendly password-prompt page.
+- [ ] Custom blocking or allowance of robots (crawlers)
+  - [ ] Use `react-helmet` to set robot-blocking head tag preventing crawling the site or page paths.
 - [ ] Encode password's value in browser's cookies.
 
 ## Considerable features
