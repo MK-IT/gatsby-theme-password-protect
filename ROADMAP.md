@@ -6,6 +6,8 @@ The roadmap is a living document, and it is likely that priorities will change, 
 
 - [x] Convert to a theme to support shadowing of the prompt component (~page).
 
+- [ ] Improve instructions and wording in `README.md`.
+
 - [ ] Add theme option for page-level password protection with optional partial matching.
   ```js
   // gatsby-config.js
