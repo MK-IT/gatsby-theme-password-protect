@@ -3,12 +3,17 @@
  * Read-only the password from cookies
  */
 import React from 'react';
+import queryString from 'query-string';
 import { getSessionPassword } from './src/utils/utils';
 import PasswordProtect from './src/components/PasswordProtect';
 
-export const wrapRootElement = (_, themeOptions) => {
-  const sessionPassword = getSessionPassword();
-  if (sessionPassword === themeOptions.password) {
+export const wrapPageElement = ({ props }, themeOptions) => {
+  const { location } = props;
+  const { secret } = queryString.parse(location.search);
+
+  const passwordCandidate = secret || getSessionPassword();
+
+  if (passwordCandidate === themeOptions.password) {
     return;
   }
 

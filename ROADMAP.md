@@ -8,6 +8,8 @@ The roadmap is a living document, and it is likely that priorities will change, 
 
 - [x] Improve instructions and wording in `README.md`.
 
+- [x] Add support for robot-friendly URL-encoded password query parameter.
+
 - [ ] Add theme option for page-level password protection with optional partial matching.
   ```js
   // gatsby-config.js
@@ -23,8 +25,7 @@ The roadmap is a living document, and it is likely that priorities will change, 
 ## Nice-to-have features
 
 - [ ] Implement more user-friendly password-prompt page.
-- [ ] Custom blocking or allowance of robots (crawlers)
-  - [ ] Use `react-helmet` to set robot-blocking head tag preventing crawling the site or page paths.
+- [ ] Use `react-helmet` to set robot-blocking head tag preventing crawling the site or page paths.
 - [ ] Encode password's value in browser's cookies.
 
 ## Considerable features

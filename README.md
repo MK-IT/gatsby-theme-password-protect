@@ -11,9 +11,10 @@
 Blocks complete access to your site to visitors without a password. After setting this theme, all access to your site will be blocked unless a visitor enters the password you set.
 
 - High-level protection for all pages within your site
-- Browser session-based password persistance via cookie
+- Browser-session-based password persistance via cookie
 - Configurable password
-- Supports custom password-prompt page through [Shadowing](https://www.gatsbyjs.org/docs/themes/shadowing)
+- Support for custom password-prompt page through [Shadowing](https://www.gatsbyjs.org/docs/themes/shadowing)
+- Support for robot-friendly URL-encoded password query parameter
 - Easy to use
 
 ## Install
@@ -64,11 +65,20 @@ _Path to be shadowed: [`@mkitio/gatsby-theme-password-protect/utils/utils.js`](h
 
 Overwrite the existing password-persistance utilities by replacing this component with your own implementation. The names of the exported functions should remain the same because these are being called from within other theme components.
 
+### Robot-friendly URL-encoded query parameter
+
+The password-prompt page can be skipped if the password is provided through a URL-encoded query parameter.
+
+The query parameter name is `secret`. An example of valid URL with encoded password might be `http://localhost:8000/?secret=sUp3rS3cR3t`.
+
+Note that every URL will need this query parameter appended in order to pass the password challenge.
+
 ## How it works
 
 The theme overrides `wrapRootElement()` for both [`gatsby-browser.js`](https://www.gatsbyjs.org/docs/browser-apis/#wrapRootElement) and [`gatsby-ssr.js`](https://www.gatsbyjs.org/docs/ssr-apis/#wrapRootElement).
 
-At the start of `wrapRootElement()` the theme tries to read the value of a cookie with name `gatsby-theme-password-protect`.
+At the start of `wrapRootElement()` the theme tries to read the secret value from the URL param `secret` or from a cookie with name `gatsby-theme-password-protect`.
 
-a) If it matches the predefined password in the theme's config => then allow the user to view the site
-b) Else => render the password-prompt page
+1. Parse `location.search` params and get the value of `secret` URL parameter
+2. If the `secret` URL parameter or the cookie value matches the predefined password => then allow the user to view the app
+3. Else => render the password-prompt page

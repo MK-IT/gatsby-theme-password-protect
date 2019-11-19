@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "js-cookie": "^2.2.1",
+    "query-string": "^6.9.0",
     "react": "^16.11.0"
   },
   "peerDependencies": {
