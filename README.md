@@ -1,4 +1,4 @@
-# @mkit/gatsby-theme-password-protect
+# @mkitio/gatsby-theme-password-protect
 
 > A Gatsby theme for protecting apps and pages with password
 
@@ -21,10 +21,10 @@ Blocks complete access to your site to visitors without a password. After settin
 
 ```sh
 # with yarn (recommended)
-yarn add mkit@gatsby-theme-password-protect
+yarn add @mkitio/gatsby-theme-password-protect
 
 # with npm
-npm install --save mkit@gatsby-theme-password-protect
+npm install --save @mkitio/gatsby-theme-password-protect
 ```
 
 ## Example usage
@@ -34,7 +34,7 @@ npm install --save mkit@gatsby-theme-password-protect
 module.exports = {
   plugins: [
     {
-      resolve: '@mkit/gatsby-theme-password-protect',
+      resolve: '@mkitio/gatsby-theme-password-protect',
       options: {
         password: 'sUp3rS3cR3t' // leave `undefined` to disable password protection
       }
