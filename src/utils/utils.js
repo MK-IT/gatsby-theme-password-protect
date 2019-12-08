@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie';
+import queryString from 'query-string';
 
 const COOKIE_NAME = 'gatsby-theme-password-protect';
 
@@ -8,4 +9,9 @@ export const setSessionPassword = passwordCandidate => {
 
 export const getSessionPassword = () => {
   return Cookies.get(COOKIE_NAME);
+};
+
+export const getQueryPassword = location => {
+  const { secret } = queryString.parse(location.search);
+  return secret;
 };
