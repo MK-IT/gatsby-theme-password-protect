@@ -1,6 +1,6 @@
 {
   "name": "@mkitio/gatsby-theme-password-protect",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A Gatsby theme for protecting apps and pages with password",
   "keywords": [
     "gatsby",
