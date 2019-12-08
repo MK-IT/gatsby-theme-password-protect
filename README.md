@@ -47,9 +47,11 @@ module.exports = {
 
 ### Theme options
 
-| Key        | Default value | Description                                                |
-| ---------- | ------------- | ---------------------------------------------------------- |
-| `password` | `undefined`   | The secret phrase (string) required from users to sign in. |
+| Key               | Default value | Description                                                                       |
+| ----------------- | ------------- | --------------------------------------------------------------------------------- |
+| `password`        | `undefined`   | The secret phrase (string) required from users to sign in.                        |
+| `pagePaths`       | `undefined`   | An array of the page `pathname`s you want to protect.                             |
+| `partialMatching` | `undefined`   | Should the algorithm check for pathnames starting with the values of `pagePaths`. |
 
 ### Custom password-prompt page
 
@@ -75,6 +77,8 @@ Note that every URL will need this query parameter appended in order to pass the
 
 ## How it works
 
+### Password check
+
 The theme overrides `wrapRootElement()` for both [`gatsby-browser.js`](https://www.gatsbyjs.org/docs/browser-apis/#wrapRootElement) and [`gatsby-ssr.js`](https://www.gatsbyjs.org/docs/ssr-apis/#wrapRootElement).
 
 At the start of `wrapRootElement()` the theme tries to read the password from the URL param `secret` or from a cookie with name `gatsby-theme-password-protect`.
@@ -83,3 +87,17 @@ At the start of `wrapRootElement()` the theme tries to read the password from th
 2. If necessary compare the password candidate with the password set in options
 3. If the passwords match allow the user to view the app or page
 4. Otherwise render the password prompt component
+
+### Partial matching
+
+With `partialMatching` enabled any page under `/hello/*` will require password, e.g. `/hello`, `/hello-world`, `/hello/world`, `/helloworld`.
+
+```js
+// gatsby-config.js
+...
+  options: {
+    partialMatching: true,
+    pagePaths: ['/hello']
+  }
+...
+```
