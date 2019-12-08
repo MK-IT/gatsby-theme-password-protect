@@ -10,7 +10,7 @@ The roadmap is a living document, and it is likely that priorities will change, 
 
 - [x] Add support for robot-friendly URL-encoded password query parameter.
 
-- [ ] Add theme option for page-level password protection with optional partial matching.
+- [x] Add theme option for page-level password protection with optional partial matching.
   ```js
   // gatsby-config.js
   ..., {

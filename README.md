@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: '@mkitio/gatsby-theme-password-protect',
       options: {
-        password: 'sUp3rS3cR3t' // leave `undefined` to disable password protection
+        password: 'sUp3rS3cR3t' // delete or `undefined` to disable password protection
       }
     }
   ]
@@ -47,9 +47,9 @@ module.exports = {
 
 ### Theme options
 
-| Key        | Default value | Description                                                                                                                                                   |
-| ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `password` | `undefined`   | The secret phrase (string) required from users to sign in. `undefined` would be the same as no-protection and users will not be prompted for password at all. |
+| Key        | Default value | Description                                                |
+| ---------- | ------------- | ---------------------------------------------------------- |
+| `password` | `undefined`   | The secret phrase (string) required from users to sign in. |
 
 ### Custom password-prompt page
 
@@ -77,8 +77,9 @@ Note that every URL will need this query parameter appended in order to pass the
 
 The theme overrides `wrapRootElement()` for both [`gatsby-browser.js`](https://www.gatsbyjs.org/docs/browser-apis/#wrapRootElement) and [`gatsby-ssr.js`](https://www.gatsbyjs.org/docs/ssr-apis/#wrapRootElement).
 
-At the start of `wrapRootElement()` the theme tries to read the secret value from the URL param `secret` or from a cookie with name `gatsby-theme-password-protect`.
+At the start of `wrapRootElement()` the theme tries to read the password from the URL param `secret` or from a cookie with name `gatsby-theme-password-protect`.
 
-1. Parse `location.search` params and get the value of `secret` URL parameter
-2. If the `secret` URL parameter or the cookie value matches the predefined password => then allow the user to view the app
-3. Else => render the password-prompt page
+1. Get the password candidate from URL param `secret` or cookie
+2. If necessary compare the password candidate with the password set in options
+3. If the passwords match allow the user to view the app or page
+4. Otherwise render the password prompt component
