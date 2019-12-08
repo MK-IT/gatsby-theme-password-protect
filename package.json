@@ -4,6 +4,7 @@
   "description": "A Gatsby theme for protecting apps and pages with password",
   "keywords": [
     "gatsby",
+    "gatsby-plugin",
     "gatsby-theme",
     "gatsby-theme-password-protect",
     "mkit",
