@@ -15,3 +15,15 @@ export const getQueryPassword = location => {
   const { secret } = queryString.parse(location.search);
   return secret;
 };
+
+export const isProtectedPage = ({ pathname }, pagePaths, partialMatching) => {
+  const isProtected = pagePaths.find(path => {
+    if (partialMatching) {
+      return path.startsWith(pathname);
+    }
+
+    return path === pathname;
+  });
+
+  return isProtected;
+};
