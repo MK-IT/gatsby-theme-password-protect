@@ -90,7 +90,14 @@ At the start of `wrapRootElement()` the theme tries to read the password from th
 
 ### Partial matching
 
-With `partialMatching` enabled any page under `/hello/*` will require password, e.g. `/hello`, `/hello-world`, `/hello/world`, `/helloworld`.
+With `partialMatching: true` any page under `/hello*` will require password.
+
+`['/hello']` would match and protect:
+
+- `/hello`,
+- `/hello-world`
+- `/hello/world`,
+- `/helloworld`
 
 ```js
 // gatsby-config.js

@@ -18,8 +18,10 @@ export const getQueryPassword = location => {
 
 export const isProtectedPage = ({ pathname }, pagePaths, partialMatching) => {
   const isProtected = pagePaths.find(path => {
-    if (partialMatching) {
-      return path.startsWith(pathname);
+    const isIndexPage = pathname === '/';
+
+    if (partialMatching && !isIndexPage) {
+      return pathname.startsWith(path);
     }
 
     return path === pathname;
