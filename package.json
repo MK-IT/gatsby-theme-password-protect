@@ -15,7 +15,10 @@
   ],
   "main": "index.js",
   "scripts": {
-    "release": "release-it"
+    "release": "release-it",
+    "prepare":"husky install",
+    "format": "prettier --write \"src\"",
+    "lint": "eslint --fix \"src\""
   },
   "dependencies": {
     "js-cookie": "^2.2.1",
