@@ -17,11 +17,6 @@
   "scripts": {
     "release": "release-it"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": ""
-    }
-  },
   "dependencies": {
     "js-cookie": "^2.2.1",
     "query-string": "^6.9.0",
