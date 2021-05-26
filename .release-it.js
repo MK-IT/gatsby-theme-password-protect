@@ -1,5 +1,5 @@
 module.exports = {
-  gitlab: {
+  github: {
     release: true
   }
 };
