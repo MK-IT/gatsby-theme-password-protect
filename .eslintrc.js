@@ -1,7 +1,7 @@
 const { peerDependencies } = require('./package.json');
 
 module.exports = {
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'prettier'],
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': ['error'],

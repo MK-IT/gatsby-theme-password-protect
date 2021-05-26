@@ -15,22 +15,10 @@
   ],
   "main": "index.js",
   "scripts": {
-    "release": "release-it"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{js,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "release": "release-it",
+    "prepare": "husky install",
+    "format": "prettier --write \"src\"",
+    "lint": "eslint --fix \"src\""
   },
   "dependencies": {
     "js-cookie": "^2.2.1",
@@ -43,17 +31,18 @@
     "react-dom": "^16.11.0"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2",
-    "release-it": "^12.4.3"
+    "husky": "^6.0.0",
+    "prettier": "^2.3.0",
+    "release-it": "^14.7.0"
   },
   "author": "MK IT Ltd. <hi@mkit.io>",
   "homepage": "https://gitlab.com/mkit/open-source/gatsby-theme-password-protect#readme",
