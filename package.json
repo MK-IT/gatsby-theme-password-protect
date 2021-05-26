@@ -56,13 +56,13 @@
     "release-it": "^12.4.3"
   },
   "author": "MK IT Ltd. <hi@mkit.io>",
-  "homepage": "https://gitlab.com/mkit/open-source/gatsby-theme-password-protect#readme",
+  "homepage": "https://github.com/MK-IT/gatsby-theme-password-protect/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/mkit/open-source/gatsby-theme-password-protect.git"
+    "url": "git+https://github.com/MK-IT/gatsby-theme-password-protect.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/mkit/open-source/gatsby-theme-password-protect/issues"
+    "url": "https://github.com/MK-IT/gatsby-theme-password-protect/issues"
   },
   "publishConfig": {
     "access": "public"
