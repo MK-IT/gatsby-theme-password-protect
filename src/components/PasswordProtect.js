@@ -49,6 +49,14 @@ const PasswordProtect = () => {
   const [isThemeHovered, themeHover] = useState(false);
   const [isSiteHovered, siteHover] = useState(false);
 
+  useEffect(() => (
+    setIsInBrowser(true)
+  ), [])
+
+  if(!isInBrowser){
+    return null;
+  }
+
   const onSubmit = event => {
     event.preventDefault();
     setSessionPassword(password);
