@@ -1,7 +1,7 @@
 /**
  * Write-only the password as cookie
  */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { setSessionPassword } from '../utils/utils';
 
 const styles = {
