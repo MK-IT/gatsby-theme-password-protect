@@ -1,7 +1,7 @@
 /**
  * Write-only the password as cookie
  */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { setSessionPassword } from '../utils/utils';
 
 const styles = {
@@ -48,12 +48,21 @@ const PasswordProtect = () => {
   const [isButtonHovered, buttonHover] = useState(false);
   const [isThemeHovered, themeHover] = useState(false);
   const [isSiteHovered, siteHover] = useState(false);
+  const [isInBrowser, setIsInBrowser] = useState(false);
 
   const onSubmit = event => {
     event.preventDefault();
     setSessionPassword(password);
     window.location.reload(); // eslint-disable-line
   };
+
+  useEffect(() => (
+    setIsInBrowser(true)
+  ), [])
+
+  if(!isInBrowser){
+    return null;
+  }
 
   return (
     <div style={styles.wrapper}>
